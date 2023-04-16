@@ -20,6 +20,6 @@ urlpatterns = [
     path('logout', logout , name='logout'),
     path('cart', auth_middleware(Cart.as_view()) , name='cart'),
     path('check-out', CheckOut.as_view() , name='checkout'),
-    path('orders', auth_middleware(OrderView.as_view()), name='orders'),
+    path('orders/', auth_middleware(OrderView.as_view()), name='orders'),
     path('searches', searches.searches, name='searches'),
 ]
