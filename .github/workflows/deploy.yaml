@@ -21,11 +21,6 @@ jobs:
         docker push djangoacrrepo.azurecr.io/djangoimage:${{ github.sha }}
       
     # Set the target AKS cluste.
-    - name: 'Log into Azure using github secret AZURE_CREDENTIALS'
-      uses: Azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-        enable-AzPSSession: true
     - uses: Azure/aks-set-context@v1
       with:
         creds: '${{ secrets.AZURE_CREDENTIALS }}'
