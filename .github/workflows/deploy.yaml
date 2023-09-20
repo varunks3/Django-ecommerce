@@ -20,7 +20,7 @@ jobs:
         docker build . -t djangoacrrepo.azurecr.io/djangoimage:${{ github.sha }}
         docker push djangoacrrepo.azurecr.io/djangoimage:${{ github.sha }}
       
-    # Set the target AKS cluster.
+    # Set the target AKS cluster
     - uses: Azure/aks-set-context@v1
       with:
         creds: '${{ secrets.AZURE_CREDENTIALS }}'
